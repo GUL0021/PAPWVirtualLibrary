@@ -1,0 +1,8 @@
+include ../hlavicka
+include ./genre_card
+
+block content
+  .container
+    .row.row-cols-3
+      each genre in genres
+        +genre_card(genre.name, genre.route)

@@ -1,0 +1,16 @@
+include ../hlavicka
+include ./book_card
+
+block content
+  .container
+    .row
+      .col
+        h5.card-title Názov
+      .col 
+        h5.card-title Autor
+      .col 
+        h5.card-title Žáner
+      .col 
+        h5.card-title 
+    each book in books
+      +book_card(book,true) 

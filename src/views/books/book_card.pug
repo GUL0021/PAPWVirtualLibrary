@@ -1,0 +1,13 @@
+mixin book_card(book,displayGenre)
+  .card
+    .card-body
+      .row
+        .col
+          h5.card-title #{book.title}
+        .col  
+          h5.card-title #{book.author}
+        .col
+          if displayGenre      
+            h5.card-title #{book.name}
+        .col
+          a.btn.btn-primary(href=book.link target="_blank") Čítať online

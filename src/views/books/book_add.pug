@@ -1,0 +1,20 @@
+include ../hlavicka
+block content
+.container
+  .dropdown
+    form(method="POST", action="/insert-books")
+      .form-group
+        label(for="title") Názov
+        input#title.form-control(name="title")
+      .form-group
+        label(for="genre") Žáner
+        select#genre.custom-select(name="genre_id")
+          each genre in genres
+            option(value=genre.id) #{genre.name}
+      .form-group
+        label(for="author") Autor
+        input#author.form-control(name="author")
+      .form-group
+        label(for="link") Odkaz
+        input#link.form-control(name="link")
+      button.btn.btn-primary(type="sumbit") Vložiť

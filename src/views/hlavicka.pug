@@ -1,0 +1,42 @@
+html
+  head
+    title= 'Virtualna kniznica'
+    link(
+      rel="stylesheet",
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh",
+      crossorigin="anonymous"
+    )
+  body.bg-light
+  header
+    nav.navbar.navbar-expand-md.navbar-light.bg-light
+      a.navbar-brand(href="/") Virtuálna knižnica
+      button.navbar-toggler(
+        type="button",
+        data-bs-toggle="collapse",
+        data-bs-target="#navbar"
+      )
+        span.navbar-toggler-icon
+      #navbar.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href="/books/add") Pridať knihu
+          li.nav-item
+            a.nav-link(href="/genres") Žánre
+          li.nav-item
+            a.nav-link(href="/books") Knihy
+        span.navbar-text
+        form.form-inline.my-2.my-lg-0(method="POST", action="/search")
+          input.form-control.mr-sm-2(
+            type="search",
+            name="searchBooks",
+            placeholder="napr. autor, názov",
+            aria-label="Search"
+          )
+          button.btn.btn-primary(type="submit") Hľadať
+      block content
+      script(
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js",
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW",
+        crossorigin="anonymous"
+      )

@@ -1,0 +1,9 @@
+include ../hlavicka
+include ./book_card
+
+
+block content
+  .container
+    p Žáner - #{genreName}
+    each book in books
+      +book_card(book,false)
